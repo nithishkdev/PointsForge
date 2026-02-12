@@ -452,7 +452,7 @@
     "customerId": "C009",
     "customerName": "Liam Clark",
     "product": "Phone",
-    "amount": 72000,
+    "amount": 72010,
     "date": "2024-05-09"
   },
   {
@@ -492,7 +492,7 @@
     "customerId": "C002",
     "customerName": "Emma Wilson",
     "product": "Dress",
-    "amount": 24000,
+    "amount": 24001,
     "date": "2025-01-29"
   },
   {
@@ -548,7 +548,7 @@
     "customerId": "C009",
     "customerName": "Liam Clark",
     "product": "Laptop",
-    "amount": 105000,
+    "amount": 105110,
     "date": "2025-05-10"
   },
   {
@@ -556,7 +556,7 @@
     "customerId": "C010",
     "customerName": "Mia Lewis",
     "product": "Shoes",
-    "amount": 19000,
+    "amount": 19001,
     "date": "2025-05-26"
   }
 ]
