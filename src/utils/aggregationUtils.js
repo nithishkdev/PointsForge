@@ -1,4 +1,4 @@
-import { getMonthYearKey, getMonthYearLabel } from "./dateUtils";
+import { getMonthYearKey } from "./dateUtils";
 
 /**
  * Filters transactions to get only the most recent three months of data
