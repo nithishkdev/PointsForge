@@ -31,3 +31,36 @@ export const getMonthYearLabel = (date) => {
     year: year
   };
 };
+
+
+/**
+ * Formats month-year key into UI friendly format
+ * Example: "2025-02" → "2025-FEB"
+ *
+ * @param {string} monthKey - Format: YYYY-MM
+ * @returns {string} Formatted label
+ */
+export const formatMonthYearLabel = (monthKey) => {
+  if (!monthKey) return "";
+
+  const [year, month] = monthKey.split("-");
+
+  const monthNames = [
+    "JAN",
+    "FEB",
+    "MAR",
+    "APR",
+    "MAY",
+    "JUN",
+    "JUL",
+    "AUG",
+    "SEP",
+    "OCT",
+    "NOV",
+    "DEC"
+  ];
+
+  const monthIndex = parseInt(month, 10) - 1;
+
+  return `${year}-${monthNames[monthIndex]}`;
+};

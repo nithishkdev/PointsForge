@@ -51,32 +51,32 @@ export const getRecentThreeMonthsData = (transactions) => {
 
 /**
  * Aggregates transactions by customer and month to calculate monthly rewards
- * 
+ *
  * @param {Array} transactions - Array of transaction objects with rewardPoints
  * @returns {Array} Array of monthly reward summaries per customer
  */
 export const aggregateMonthlyRewards = (transactions) =>
   Object.values(
     transactions.reduce((accumulator, transaction) => {
-      const { monthYear } = getMonthYearLabel(transaction.date);
-      const monthKey = getMonthYearKey(transaction.date);
+      const monthKey = getMonthYearKey(transaction.date); // YYYY-MM
 
-      const uniqueKey = `${transaction.customerId}-${monthYear}`;
+      const uniqueKey = `${transaction.customerId}-${monthKey}`;
 
       if (!accumulator[uniqueKey]) {
         accumulator[uniqueKey] = {
           customerId: transaction.customerId,
           customerName: transaction.customerName,
-          monthYear,
-          monthKey,
+          monthKey, // raw key only
           points: 0
         };
       }
 
       accumulator[uniqueKey].points += Number(transaction.rewardPoints) || 0;
+
       return accumulator;
     }, {})
   );
+
 
 /**
  * Aggregates monthly rewards to calculate total rewards per customer

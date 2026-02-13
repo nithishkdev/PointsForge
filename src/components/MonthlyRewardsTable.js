@@ -1,5 +1,7 @@
 import React from "react";
 import Table from "./Table";
+import { formatMonthYearLabel } from "../utils/dateUtils";
+
 
 /**
  * Monthly rewards table component
@@ -19,7 +21,8 @@ const MonthlyRewardsTable = ({ data }) => {
     {
       key: "monthKey",
       label: "Month & Year",
-      sortable: true
+      sortable: true,
+      render: (row) => formatMonthYearLabel(row.monthKey)
     },
     {
       key: "points",
